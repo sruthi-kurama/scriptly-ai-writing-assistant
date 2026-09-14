@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scriptly | AI Writing Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+
+    <main class="wrapper">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="logo">
+
+                <div class="logo-box">
+
+                    <i class="fa-solid fa-feather-pointed"></i>
+
+                </div>
+
+                <div>
+
+                    <h1>Scriptly</h1>
+
+                    <p>AI Writing Assistant</p>
+
+                </div>
+
+            </div>
+
+            <h2>
+
+                Write Better.
+                <br>
+                Create Faster.
+
+            </h2>
+
+            <p class="hero-text">
+
+                Create professional blogs, emails, product descriptions,
+                captions and marketing content in seconds using AI.
+
+            </p>
+
+        </section>
+
+        <!-- MAIN GRID -->
+
+        <section class="grid">
+
+            <!-- FORM -->
+
+            <div class="glass-card">
+
+                <div class="card-title">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    <span>Create Content</span>
+
+                </div>
+
+                <label>
+
+                    Content Type
+
+                </label>
+
+                <select id="type">
+
+                    <option>Blog Post</option>
+
+                    <option>Email</option>
+
+                    <option>Instagram Caption</option>
+
+                    <option>LinkedIn Post</option>
+
+                    <option>Product Description</option>
+
+                    <option>YouTube Title</option>
+
+                    <option>Rewrite Text</option>
+
+                    <option>Summarize Text</option>
+
+                </select>
+
+                <label>
+
+                    Topic / Prompt
+
+                </label>
+
+                <textarea
+                    id="topic"
+                    rows="6"
+                    placeholder="Describe what you want Scriptly to write..."></textarea>
+
+                <div class="two-column">
+
+                    <div>
+
+                        <label>
+
+                            Tone
+
+                        </label>
+
+                        <select id="tone">
+
+                            <option>Professional</option>
+
+                            <option>Friendly</option>
+
+                            <option>Creative</option>
+
+                            <option>Formal</option>
+
+                            <option>Persuasive</option>
+
+                            <option>Confident</option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+
+                            Word Count
+
+                        </label>
+
+                        <input
+                            id="words"
+                            type="number"
+                            value="300"
+                            min="50"
+                            max="1000">
+
+                    </div>
+
+                </div>
+
+                <div class="button-group">
+
+    <button id="generateBtn">
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        Generate Content
+
+    </button>
+
+    <button id="clearBtn" class="secondary-btn">
+
+        <i class="fa-solid fa-eraser"></i>
+
+        Clear
+
+    </button>
+
+</div>
+
+            </div>
+
+            <!-- FEATURES -->
+
+            <div class="glass-card">
+
+                <div class="card-title">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>Why Scriptly?</span>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <div>
+
+                        <h4>Fast Generation</h4>
+
+                        <p>Powered by Groq for near instant responses.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-pen-ruler"></i>
+
+                    <div>
+
+                        <h4>Professional Writing</h4>
+
+                        <p>Generate polished and structured content.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <div>
+
+                        <h4>Multiple Content Types</h4>
+
+                        <p>Blogs, captions, emails and more.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-copy"></i>
+
+                    <div>
+
+                        <h4>Copy Instantly</h4>
+
+                        <p>Copy your AI response with one click.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <div>
+
+                        <h4>Private & Secure</h4>
+
+                        <p>Your prompts remain yours.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- OUTPUT -->
+
+        <section class="output-card">
+
+            <div class="output-top">
+
+                <h3>
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Generated Content
+
+                </h3>
+
+                <div class="output-buttons">
+
+    <button id="copyBtn">
+
+        <i class="fa-regular fa-copy"></i>
+
+        Copy
+
+    </button>
+
+    <button id="downloadBtn">
+
+        <i class="fa-solid fa-download"></i>
+
+        Download
+
+    </button>
+
+</div>
+            </div>
+
+            <div id="loader" class="loader hidden"></div>
+
+            <div id="result">
+
+Your generated content will appear here.
+
+            </div>
+            <p id="loadingText" class="loading-text hidden">
+
+    Generating content...
+
+</p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        Scriptly • Built with Flask & Groq AI
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <div id="toast">
+
+    Copied Successfully
+
+</div>
+
+</body>
+
+</html>
