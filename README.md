@@ -44,16 +44,16 @@ The application uses Flask for the backend and the Groq API to generate AI-power
 ## Screenshots
 
 ##homepage
-![scriptly homepage](screenshots/scriptly homepage.png)
+![scriptly homepage](screenshots/scriptly-homepage.png)
 
 ### Content Generator
 ![scriptly](screenshots/scriptly.png)
 
 ### blogpost
-![blogpost](screenshots/scriptly blogpost.png)
-![blogpost](screenshots/scriptly blogpost 1.png)
-![blogpost](screenshots/scriptly blogpost 2.png)
-![blogpost](screenshots/scriptly blogpost 3.png)
+![blogpost](screenshots/scriptly-blogpost.png)
+![blogpost](screenshots/scriptly-blogpost1.png)
+![blogpost](screenshots/scriptly-blogpost2.png)
+![blogpost](screenshots/scriptly-blogpost3.png)
 
 
 
