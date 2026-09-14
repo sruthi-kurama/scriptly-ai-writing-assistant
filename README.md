@@ -41,23 +41,21 @@ The application uses Flask for the backend and the Groq API to generate AI-power
 5. Flask creates a prompt and sends it to the Groq API.
 6. The AI-generated content is returned to the web interface.
 
-## Project Structure
+## Screenshots
 
-```text
-AI Content Generator/
-│
-├── app.py
-├── requirements.txt
-├── .env
-├── .gitignore
-│
-├── static/
-│   ├── style.css
-│   └── script.js
-│
-├── templates/
-│   └── index.html
-│
-└── screenshots/
-    ├── scriptly-home.png
-    └── scriptly-blog-generation.png
+##homepage
+![scriptly homepage](screenshots/scriptly homepage.png)
+
+### Content Generator
+![scriptly](screenshots/scriptly.png)
+
+### blogpost
+![blogpost](screenshots/scriptly blogpost.png)
+![blogpost](screenshots/scriptly blogpost 1.png)
+![blogpost](screenshots/scriptly blogpost 2.png)
+![blogpost](screenshots/scriptly blogpost 3.png)
+
+
+
+
+
